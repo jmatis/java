@@ -18,5 +18,5 @@ RUN rm -f jdk-7u55-linux-x64.tar
 # fix files ownerships
 RUN chown -R root:root /opt/jdk1.7.0_55
 
-# creating symlinks - these are user in start script so necesary for correct functioning
+# creating symlinks - these are used in start script so necesary for correct functioning
 RUN ln -s /opt/jdk1.7.0_55/ /opt/java
