@@ -10,10 +10,7 @@ RUN apt-get clean
 
 # download and unpack java
 WORKDIR /opt
-RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz
-RUN gunzip jdk-7u55-linux-x64.tar.gz
-RUN tar xf jdk-7u55-linux-x64.tar
-RUN rm -f jdk-7u55-linux-x64.tar
+RUN wget -nv --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz -O - | tar -zxf-
 
 # fix files ownerships
 RUN chown -R root:root /opt/jdk1.7.0_55
