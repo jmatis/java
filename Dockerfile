@@ -2,10 +2,10 @@ FROM ubuntu:14.04
 
 MAINTAINER jan.matis@gmail.com
 
+# download and install updates, then add wget
 RUN apt-get update -q
 RUN apt-get upgrade -y -q
 RUN apt-get install -y wget
-
 RUN apt-get clean
 
 # download and unpack java
@@ -15,5 +15,5 @@ RUN wget -nv --no-check-certificate --no-cookies --header "Cookie: oraclelicense
 # fix files ownerships
 RUN chown -R root:root /opt/jdk1.7.0_55
 
-# creating symlinks - these are used in start script so necesary for correct functioning
+# create symlink
 RUN ln -s /opt/jdk1.7.0_55/ /opt/java
