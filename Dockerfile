@@ -1,12 +1,6 @@
-FROM ubuntu:14.04
+FROM jmatis/ubuntu
 
 MAINTAINER jan.matis@gmail.com
-
-# download and install updates, then add wget
-RUN apt-get update -q
-RUN apt-get upgrade -y -q
-RUN apt-get install -y wget
-RUN apt-get clean
 
 # download and unpack java
 WORKDIR /opt
